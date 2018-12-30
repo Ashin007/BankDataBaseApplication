@@ -4,13 +4,15 @@ public class Savings extends Account {
 
     //properties specific to savings
 
-    int savingsDepositID;
-    int savingsDepositKey;
+    private int savingsDepositID;
+    private int savingsDepositKey;
 
-    public Savings(String name,String sSn,double deposit ) {
+    Savings(String name, String sSn, double deposit) {
         super(name,sSn,deposit  );
-       // System.out.println("Savings Account");
+
+        // System.out.println("Savings Account");
         //System.out.println("Savings Name"+name);
+
         accountNumber = "2"+accountNumber;
 
         savingsDepositID = (int) (Math.random()*Math.pow(10,5));
@@ -32,4 +34,6 @@ public class Savings extends Account {
                 "\n Savings Deposit Key: "+savingsDepositKey);
 
     }
+
+
 }

@@ -2,16 +2,16 @@ package com.company;
 
 public abstract class Account implements IbaseIntrestRate {
 
-    String name;
-    String sSn;
-    double balance;
+    private String name;
+    private String sSn;
+    private double balance;
 
     String accountNumber;
     double interestRate;
-    static int  uniqueNumber = 10000;
+    private static int  uniqueNumber = 10000;
 
 
-    public Account(String name,String sSn,double deposit) {
+    Account(String name, String sSn, double deposit) {
        // System.out.println("Account Created");
        // System.out.println("Account"+name);
         this.name = name;
@@ -32,9 +32,30 @@ public abstract class Account implements IbaseIntrestRate {
 
         uniqueNumber++;
 
-        String lastSSN = sSn.substring(sSn.length()-2,sSn.length());
+        String lastSSN = sSn.substring(sSn.length()-2);
         int threeRandomNumber = (int) (Math.random()*(Math.pow(10,3)));
         return lastSSN+uniqueNumber+threeRandomNumber;
+    }
+
+    //common bank function
+
+    void withdraw(int amount){
+
+        balance = balance - amount;
+        System.out.println("Withdraw Success Balance Amount Is: "+balance);
+    }
+
+    void deposit(int amount){
+
+        balance = balance + amount;
+        System.out.println("Deposit Success Balance Amount Is: "+balance);
+
+    }
+    protected void transfer(String toWhere,int amount){
+        balance = balance - amount;
+    }
+    protected void showBalance(){
+        System.out.println("Balance: "+balance);
     }
 
     protected void showInfo(){

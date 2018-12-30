@@ -4,17 +4,19 @@ public class Checking extends Account {
 
     //properties specific to checking account
 
-    int debitCardNumber;
-    int debitCardPin;
+    private int debitCardNumber;
+    private int debitCardPin;
 
 
     //constructor
 
 
-    public Checking(String name,String sSn,double deposit) {
+    Checking(String name, String sSn, double deposit) {
         super(name,sSn,deposit);
+
        // System.out.println("Checking Account Created");
        // System.out.println("Checking Name"+name);
+
         accountNumber = "1"+accountNumber;
 
         debitCardNumber = (int) (Math.random()*Math.pow(10,12));
@@ -35,9 +37,4 @@ public class Checking extends Account {
         "\n Debit Card Pin: "+debitCardPin);
 
     }
-
-
-
-
-    //proper method
 }
