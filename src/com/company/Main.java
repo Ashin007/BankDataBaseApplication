@@ -38,14 +38,23 @@ public class Main {
            */
 
             if(accountType.equals("Savings")){
+                
+                accountData.add(new Savings(name,sSn,deposit));
 
             }
             else if(accountType.equals("Checking")){
 
+                accountData.add(new Checking(name,sSn,deposit));
             }
             else{
                 System.out.println("Error Reading File");
             }
+        }
+
+        for ( Account account:accountData
+             ) {
+             account.showInfo();
+            
         }
     }
 }
